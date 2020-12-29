@@ -6,6 +6,10 @@ logging:
 spring:
   application:
     name: labtech-platform
+    cloud:
+      loadbalancer:
+        ribbon:
+          enabled: false
 
 server:
   port: ${APPLICATION_HOST_PORT:8080}
