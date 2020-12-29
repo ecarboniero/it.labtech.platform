@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: platform
+  namespace: dev00
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 9182
+      targetPort: 8082
