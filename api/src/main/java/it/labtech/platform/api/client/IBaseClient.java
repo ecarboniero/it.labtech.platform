@@ -10,7 +10,7 @@ import java.util.Set;
 @FeignClient("base")
 public interface IBaseClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/user")
+    @RequestMapping(method = RequestMethod.GET, value = "/base/user")
     Set<User> getUsers();
 
 }
