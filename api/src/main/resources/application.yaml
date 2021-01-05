@@ -26,6 +26,7 @@ management:
     health:
       probes:
         enabled: true
+  endpoints:
     web:
       exposure:
-        include: "info,health,metrics,mappings"
+        include: "info,health,metrics,mappings,caches"

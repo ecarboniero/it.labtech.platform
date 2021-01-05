@@ -12,7 +12,7 @@
     <name>platform.api</name>
     <description>Labtech Application Platform module :: Api</description>
     <properties>
-        <start-class>it.labtech.platform.api.Starter</start-class>
+        <starter-class>it.labtech.platform.api.Starter</starter-class>
     </properties>
     <dependencies>
         <dependency>
@@ -52,6 +52,15 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-all</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
             <scope>runtime</scope>
@@ -76,8 +85,16 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
+                    <mainClass>${starter-class}</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
